@@ -29,33 +29,39 @@ export default function App() {
     messagesKey: "messages",
     onUpdateEvent: (event: any) => {
       let processedEvent: ProcessedEvent | null = null;
-      if (event.generate_query) {
+      if (event.extract_url) {
         processedEvent = {
-          title: "Generating Search Queries",
-          data: event.generate_query?.search_query?.join(", ") || "",
+          title: "Extracting Target URL",
+          data: event.extract_url?.target_url || "Identifying URL...",
         };
-      } else if (event.web_research) {
-        const sources = event.web_research.sources_gathered || [];
-        const numSources = sources.length;
-        const uniqueLabels = [
-          ...new Set(sources.map((s: any) => s.label).filter(Boolean)),
-        ];
-        const exampleLabels = uniqueLabels.slice(0, 3).join(", ");
+      } else if (event.discovery) {
+        const discovered = event.discovery.site_tree || [];
         processedEvent = {
-          title: "Web Research",
-          data: `Gathered ${numSources} sources. Related to: ${
-            exampleLabels || "N/A"
-          }.`,
+          title: "Crawling Website",
+          data: `Found ${discovered.length} total pages.`,
         };
-      } else if (event.reflection) {
+      } else if (event.triage) {
+        const triagePages = event.triage.critical_pages || [];
+        const rationale = event.triage.triage_rationale || "";
         processedEvent = {
-          title: "Reflection",
-          data: "Analysing Web Research Results",
+          title: "Selecting Critical Pages",
+          data: `Selected ${triagePages.length} pages for deep analysis.\n${rationale}`,
         };
-      } else if (event.finalize_answer) {
+      } else if (event.evaluate_research) {
         processedEvent = {
-          title: "Finalizing Answer",
-          data: "Composing and presenting the final answer.",
+          title: "Evaluating Findings",
+          data: event.evaluate_research.evaluation_result || "Checking for missing information...",
+        };
+      } else if (event.scrape_page) {
+        const pageContents = event.scrape_page.page_contents || [];
+        processedEvent = {
+          title: "Scraping & Reading",
+          data: `Reading content from ${pageContents[0]?.url || "page"}...`,
+        };
+      } else if (event.analyze_narrative) {
+        processedEvent = {
+          title: "Analyzing Narrative",
+          data: "Drafting the final organizational narrative report.",
         };
         hasFinalizeEventOccurredRef.current = true;
       }

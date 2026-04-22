@@ -18,6 +18,9 @@ dependencies = [
     "langgraph-api",
     "fastapi",
     "google-genai",
+    "beautifulsoup4",
+    "requests",
+    "cloudscraper>=1.2.71",
 ]
 
 

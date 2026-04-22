@@ -1,5 +1,30 @@
 from typing import Any, Dict, List
+import requests
+import cloudscraper
 from langchain_core.messages import AnyMessage, AIMessage, HumanMessage
+
+def robust_scrape(url: str, timeout: int = 10):
+    """
+    Attempts to scrape a URL using requests with headers first, 
+    and falls back to cloudscraper if that fails with a 403 or other error.
+    """
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+    }
+
+    try:
+        response = requests.get(url, headers=headers, timeout=timeout)
+        response.raise_for_status()
+        return response
+    except Exception as e:
+        print(f"requests failed for {url}: {e}")
+        # Fallback to cloudscraper
+        scraper = cloudscraper.create_scraper()
+        response = scraper.get(url, timeout=timeout)
+        response.raise_for_status()
+        return response
 
 
 def get_research_topic(messages: List[AnyMessage]) -> str:

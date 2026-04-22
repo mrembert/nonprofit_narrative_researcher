@@ -2,22 +2,29 @@ from typing import List
 from pydantic import BaseModel, Field
 
 
-class SearchQueryList(BaseModel):
-    query: List[str] = Field(
-        description="A list of search queries to be used for web research."
+class TargetUrlExtraction(BaseModel):
+    url: str = Field(
+        description="The primary website URL of the organization to analyze."
+    )
+
+
+class CriticalPages(BaseModel):
+    pages: List[str] = Field(
+        description="A list of 3-5 critical page URLs for analyzing the organizational narrative."
     )
     rationale: str = Field(
-        description="A brief explanation of why these queries are relevant to the research topic."
+        description="A brief explanation of why these pages are most relevant for the narrative."
     )
 
 
-class Reflection(BaseModel):
-    is_sufficient: bool = Field(
-        description="Whether the provided summaries are sufficient to answer the user's question."
+class EvaluateResearch(BaseModel):
+    needs_more_research: bool = Field(
+        description="True if the current scraped content is missing critical narrative elements (like funding, history, key team members, recent news) and we have un-scraped links available."
     )
-    knowledge_gap: str = Field(
-        description="A description of what information is missing or needs clarification."
+    reasoning: str = Field(
+        description="A brief explanation of what is missing or why we have enough information."
     )
-    follow_up_queries: List[str] = Field(
-        description="A list of follow-up queries to address the knowledge gap."
+    new_target_urls: List[str] = Field(
+        description="A list of 1-3 new critical pages to scrape to fill the identified gaps. Must be from the 'Unscraped Links' list."
     )
+
