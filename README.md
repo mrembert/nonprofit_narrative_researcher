@@ -7,8 +7,6 @@
 
 **Nonprofit Narrative Researcher** is an autonomous, agentic research engine designed to help mission-driven organizations synthesize their impact and identify strategic narrative gaps. By leveraging **LangGraph** for multi-agent orchestration and **Google Gemini 2.5 Pro**, it performs deep, iterative research across the web to build a verifiable, cited narrative of an organization's work and its place in the broader ecosystem.
 
-<img src="./app.png" title="Nonprofit Narrative Researcher Interface" alt="App Interface" width="90%">
-
 ## 🚀 The Vision: Agentic Digital Public Infrastructure
 
 This project serves as a **Reference Architecture** for how nonprofits can utilize Agentic AI to bridge the "data-narrative gap." In a landscape where mission-driven work is often buried in unstructured reports and disparate web pages, this tool acts as a piece of **Digital Public Infrastructure (DPI)**—a reusable, verifiable research layer that ensures organizational storytelling is grounded in high-fidelity data.
@@ -31,8 +29,6 @@ The core logic resides in a state-machine graph (`backend/src/agent/graph.py`):
 4. **Evaluation:** An LLM-based reflection step identifies knowledge gaps or contradictions.
 5. **Iterative Refinement:** If research is insufficient, the agent dynamically generates new search terms and returns to the discovery phase.
 6. **Narrative Synthesis:** Final synthesis of the gathered data into a structured report.
-
-<img src="./agent.png" title="LangGraph Agent Flow" alt="Agent Flow" width="50%">
 
 ## 🛠 Tech Stack
 
