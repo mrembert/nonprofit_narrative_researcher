@@ -1,11 +1,11 @@
 # Nonprofit Narrative Researcher: Agentic AI for Strategic Storytelling
 
 [![LangGraph](https://img.shields.io/badge/Orchestration-LangGraph-blue)](https://langchain-ai.github.io/langgraph/)
-[![Gemini 1.5 Pro](https://img.shields.io/badge/AI-Gemini%201.5%20Pro-orange)](https://deepmind.google/technologies/gemini/)
+[![Gemini 2.5 Pro](https://img.shields.io/badge/AI-Gemini%202.5%20Pro-orange)](https://deepmind.google/technologies/gemini/)
 [![React](https://img.shields.io/badge/Frontend-React%2019-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![Digital Public Infrastructure](https://img.shields.io/badge/Category-Digital%20Public%20Infrastructure-green)](#)
 
-**Nonprofit Narrative Researcher** is an autonomous, agentic research engine designed to help mission-driven organizations synthesize their impact and identify strategic narrative gaps. By leveraging **LangGraph** for multi-agent orchestration and **Google Gemini 1.5 Pro**, it performs deep, iterative research across the web to build a verifiable, cited narrative of an organization's work and its place in the broader ecosystem.
+**Nonprofit Narrative Researcher** is an autonomous, agentic research engine designed to help mission-driven organizations synthesize their impact and identify strategic narrative gaps. By leveraging **LangGraph** for multi-agent orchestration and **Google Gemini 2.5 Pro**, it performs deep, iterative research across the web to build a verifiable, cited narrative of an organization's work and its place in the broader ecosystem.
 
 <img src="./app.png" title="Nonprofit Narrative Researcher Interface" alt="App Interface" width="90%">
 
@@ -38,7 +38,7 @@ The core logic resides in a state-machine graph (`backend/src/agent/graph.py`):
 
 - **Frontend:** React 19, TypeScript, Vite, Tailwind CSS, Shadcn UI.
 - **Backend:** Python 3.11+, LangGraph, FastAPI, LangChain.
-- **AI Models:** Google Gemini 1.5 Pro & Flash.
+- **AI Models:** Google Gemini 2.5 Pro & Flash.
 - **Infrastructure:** Docker, Makefile for rapid development.
 
 ## 🚦 Getting Started
