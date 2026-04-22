@@ -1,13 +1,13 @@
 # Nonprofit Narrative Researcher: Agentic AI for Strategic Storytelling
 
 [![LangGraph](https://img.shields.io/badge/Orchestration-LangGraph-blue)](https://langchain-ai.github.io/langgraph/)
-[![Gemini 2.5 Pro](https://img.shields.io/badge/AI-Gemini%202.5%20Pro-orange)](https://deepmind.google/technologies/gemini/)
+[![Gemini 3.1 Pro](https://img.shields.io/badge/AI-Gemini%203.1%20Pro-orange)](https://deepmind.google/technologies/gemini/)
 [![React](https://img.shields.io/badge/Frontend-React%2019-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![Digital Public Infrastructure](https://img.shields.io/badge/Category-Digital%20Public%20Infrastructure-green)](#)
 
-**Nonprofit Narrative Researcher** is an autonomous, agentic research engine designed to help mission-driven organizations synthesize their impact and identify strategic narrative gaps. By leveraging **LangGraph** for multi-agent orchestration and **Google Gemini 2.5 Pro**, it performs deep, iterative research across the web to build a verifiable, cited narrative of an organization's work and its place in the broader ecosystem.
-
-## 🚀 The Vision: Agentic Digital Public Infrastructure
+**Nonprofit Narrative Researcher** is an autonomous, agentic research engine designed to help mission-driven organizations synthesize their impact and identify strategic narrative gaps. By leveraging **LangGraph** for multi-agent orchestration and **Google Gemini 3.1 Pro**, it performs deep, iterative research across the web to build a verifiable, cited narrative of an organization's work and its place in the broader ecosystem.
+...
+- **AI Models:** Google Gemini 3.1 Pro & 3.1 Flash-Lite.
 
 This project serves as a **Reference Architecture** for how nonprofits can utilize Agentic AI to bridge the "data-narrative gap." In a landscape where mission-driven work is often buried in unstructured reports and disparate web pages, this tool acts as a piece of **Digital Public Infrastructure (DPI)**—a reusable, verifiable research layer that ensures organizational storytelling is grounded in high-fidelity data.
 
@@ -34,7 +34,7 @@ The core logic resides in a state-machine graph (`backend/src/agent/graph.py`):
 
 - **Frontend:** React 19, TypeScript, Vite, Tailwind CSS, Shadcn UI.
 - **Backend:** Python 3.11+, LangGraph, FastAPI, LangChain.
-- **AI Models:** Google Gemini 2.5 Pro & Flash.
+- **AI Models:** Google Gemini 3.1 Pro & 3.1 Flash-Lite.
 - **Infrastructure:** Docker, Makefile for rapid development.
 
 ## 🚦 Getting Started
